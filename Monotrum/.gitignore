@@ -100,3 +100,9 @@ InitTestScene*.unity*
 
 # Ignore imported assets
 Assets/Imports/**
+Assets/Plugins/Editor/JetBrains.RiderFlow/**
+
+# Audio Files
+*.mp3
+*.wav
+*.ogg
