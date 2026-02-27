@@ -27,7 +27,7 @@ namespace Core
             if (InputManager.Instance != null && InputManager.Instance.ConsumeCancel())
             {
                 ToggleCursorState();
-                Logger.Instance.LogInfo("Escape Pressed");
+                // Logger.Instance.LogInfo("Escape Pressed");
             }
         }
         
@@ -35,6 +35,7 @@ namespace Core
         {
             // 매니저를 생성하고 transform을 GameManager 밑으로 옮겨서 정리
             RegisterManager<InputManager>();
+            RegisterManager<AudioManager>();
             //RegisterManager<SceneController>();
             
             Logger.Instance.LogInfo("All System Managers Initialized.");

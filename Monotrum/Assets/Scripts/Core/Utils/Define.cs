@@ -19,6 +19,11 @@ namespace Core
             public const string IsFalling = "FreeFall";
             public const string MotionSpeed = "MotionSpeed";
         }
+
+        public static class Music
+        {
+            public const string Title = "Neon nights - Patrick Patrikios";
+        }
     }
 
     // 전역에서 사용할 Enum (게임 상태 등)
