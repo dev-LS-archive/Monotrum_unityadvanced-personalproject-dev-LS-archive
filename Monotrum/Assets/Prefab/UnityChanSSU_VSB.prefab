@@ -3601,9 +3601,9 @@ MonoBehaviour:
             transformArray: []
         renderMeshList: []
   gizmoSerializeData:
-    always: 1
+    always: 0
     clothDebugSettings:
-      enable: 1
+      enable: 0
       ztest: 0
       position: 1
       axis: 1
@@ -7239,16 +7239,16 @@ MonoBehaviour:
         originalMesh: {fileID: 0}
     selectionData:
       positions:
-      - x: 0.13570976
+      - x: 0.13570964
         y: 1.45331
         z: -0.09314072
-      - x: 0.12153983
+      - x: 0.12153995
         y: 1.4478325
         z: 0.00033676624
-      - x: -0.13570976
+      - x: -0.13570964
         y: 1.4533099
         z: -0.09314072
-      - x: -0.12154007
+      - x: -0.12153995
         y: 1.4478323
         z: 0.00033676624
       - x: 0
@@ -7256,7 +7256,7 @@ MonoBehaviour:
         z: 0.019354105
       - x: 0
         y: 1.6277229
-        z: 0.11736965
+        z: 0.11736953
       attributes:
       - Value: 1
       - Value: 2
@@ -7264,7 +7264,7 @@ MonoBehaviour:
       - Value: 2
       - Value: 1
       - Value: 2
-      maxConnectionDistance: 0.09809066
+      maxConnectionDistance: 0.098090544
       userEdit: 0
     preBuildData:
       enabled: 0
@@ -8126,10 +8126,10 @@ MonoBehaviour:
       - x: -0.08730364
         y: 1.5955806
         z: 0.01883161
-      - x: -0.13790083
+      - x: -0.13790095
         y: 1.6598653
         z: -0.037557006
-      - x: -0.10261893
+      - x: -0.10261905
         y: 1.6338303
         z: -0.097448945
       - x: -0.08607268
@@ -8140,7 +8140,7 @@ MonoBehaviour:
       - Value: 2
       - Value: 2
       - Value: 2
-      maxConnectionDistance: 0.10301852
+      maxConnectionDistance: 0.103018545
       userEdit: 0
     preBuildData:
       enabled: 0
@@ -9675,7 +9675,7 @@ RotationConstraint:
   serializedVersion: 2
   m_Weight: 0.9
   m_RotationAtRest: {x: 52.30261, y: -35.60783, z: 55.94609}
-  m_RotationOffset: {x: 29.689405, y: 114.08442, z: -85.67077}
+  m_RotationOffset: {x: 29.689405, y: 114.08442, z: -85.67078}
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
@@ -12398,10 +12398,10 @@ MonoBehaviour:
         originalMesh: {fileID: 0}
     selectionData:
       positions:
-      - x: 0.087304115
+      - x: 0.087303996
         y: 1.5955806
         z: 0.01883161
-      - x: 0.13790154
+      - x: 0.13790143
         y: 1.6598654
         z: -0.037557006
       - x: 0.10261941
@@ -14294,7 +14294,7 @@ RotationConstraint:
   serializedVersion: 2
   m_Weight: 0.5
   m_RotationAtRest: {x: 0.08951778, y: 133.42139, z: -0.6263446}
-  m_RotationOffset: {x: -46.360126, y: 0.42012805, z: 91.314514}
+  m_RotationOffset: {x: -46.360126, y: 0.420133, z: 91.314514}
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
