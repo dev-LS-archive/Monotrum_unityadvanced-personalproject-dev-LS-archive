@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Log_Area
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2ba35850f56437849b9b92bf6ac0a68a, type: 2}
+  m_sharedMaterial: {fileID: 5082456044997835858, guid: 2ba35850f56437849b9b92bf6ac0a68a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -312,4 +312,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugAreaText: {fileID: 3125145708609708438}
   enableDebug: 1
-  maxLines: 15
+  maxLines: 12

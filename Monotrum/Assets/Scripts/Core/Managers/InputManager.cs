@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +8,12 @@ namespace Core
     {
         private MonotrumInput _input;
         
+        public event Action OnCancelAction;
+        
         // 현재 입력 상태
         public Vector2 MoveInput { get; private set; }
 
-        private bool _cancelInput;
+        // private bool _cancelInput;
         
         private bool _isInputBlocked = false;
         
@@ -73,10 +76,13 @@ namespace Core
         private void OnCancel(InputAction.CallbackContext ctx)
         {
             if (_isInputBlocked) return;
-            _cancelInput = true;
+            OnCancelAction?.Invoke(); // 폴링용 bool 변수 대신 즉시 이벤트 발송
+            // _cancelInput = true;
         }
         #endregion
         
+        // [학습 기록] Consume 폴링 방식 → 이벤트(OnCancelAction) 발송으로 전환하기 전 코드
+        /*
         // GameManager에서 ESC 입력 확인 후 해제할 때 사용
         public bool ConsumeCancel()
         {
@@ -87,6 +93,7 @@ namespace Core
             }
             return false;
         }
+        */
         
         public void SetInputActive(bool active)
         {
