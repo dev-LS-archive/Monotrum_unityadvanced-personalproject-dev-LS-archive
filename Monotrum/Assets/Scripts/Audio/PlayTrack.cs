@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using Core;
-using UnityEngine.Serialization;
 using Logger = Core.Logger;
 
 namespace Audio

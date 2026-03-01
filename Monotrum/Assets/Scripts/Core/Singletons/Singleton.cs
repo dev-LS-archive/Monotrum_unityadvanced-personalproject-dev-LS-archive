@@ -6,13 +6,14 @@ namespace Core
     {
         private static T _instance;
         private static bool _isQuitting = false;
+        public static bool IsQuitting => _isQuitting;
     
         public static T Instance
         {
             get
             {
                 // 종료 상태면 null 반환
-                if (_isQuitting)
+                if (IsQuitting)
                 {
                     Debug.LogWarning($"[Singleton] 인스턴스 '{typeof(T)}' 는 이미 파괴됨. 재생성 방지.");
                     return null;

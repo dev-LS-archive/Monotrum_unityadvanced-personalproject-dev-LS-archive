@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,6 +10,9 @@ namespace Core
         [Header("Audio Components")]
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioMixer _audioMixer; // 테이프 스톱, 일시정지 필터용 믹서
+        
+        // 오디오 재생 상태가 변할 때 알리는 이벤트
+        public event Action<bool> OnPlayStateChanged;
         
         public bool IsPlaying => _audioSource.isPlaying;
 
@@ -33,6 +37,8 @@ namespace Core
             {
                 _audioSource.clip = track.clip;
                 _audioSource.Play();
+                
+                OnPlayStateChanged?.Invoke(true);
                 Logger.Instance.LogInfo($"Track Loaded & Playing: {track.trackName}");
             }
             else
@@ -44,6 +50,8 @@ namespace Core
         public void StopTrack()
         {
             _audioSource.Stop();
+            
+            OnPlayStateChanged?.Invoke(false);
         }
 
         #endregion

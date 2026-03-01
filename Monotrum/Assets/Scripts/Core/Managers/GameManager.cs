@@ -19,8 +19,19 @@ namespace Core
         void Start()
         {
             Logger.Instance.LogInfo("Starting Game Manager");
+            InputManager.Instance.OnCancelAction += ToggleCursorState;
         }
-
+        
+        private void OnDestroy()
+        {
+            if (IsQuitting) return; // 앱 종료 시에는 해제 불필요 (어차피 전부 파괴됨)
+            
+            if (InputManager.Instance != null)
+                InputManager.Instance.OnCancelAction -= ToggleCursorState;
+        }
+        
+        // [학습 기록] 폴링 방식 -> 옵저버 패턴으로 전환하기 전 코드
+        /*
         private void Update()
         {
             // InputManager가 살아있고, 취소 키(ESC)가 눌렸다면
@@ -30,6 +41,7 @@ namespace Core
                 // Logger.Instance.LogInfo("Escape Pressed");
             }
         }
+        */
         
         private void InitializeManagers()
         {

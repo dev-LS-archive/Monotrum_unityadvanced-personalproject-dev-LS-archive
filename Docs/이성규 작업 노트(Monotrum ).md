@@ -3,7 +3,7 @@
 **작성자**: 이성규  
 **게임명**: Monotrum (모노트럼)  
 **작성일**: 2026-02-24  
-**최종 수정**: 2026-02-26
+**최종 수정**: 2026-03-01
 
 ## 프로젝트 개요
 
@@ -385,6 +385,29 @@ AudioSource → GetSpectrumData(512 bins)
 
 두 레이어 모두 동일한 `AudioAnalyzer.BandBuffer`를 읽어 각각 다른 방식으로 소비하는 구조로 구현한다.
 
+### Day 3 - 2026-02-28 (생일 휴식일)
+
+개인 일정으로 외출과 생일 날이라 가족과 시간을 보내 개발에 시간을 사용하지 못함
+
+### Day 4 - 2026-03-01 (휴식 및 코드 리팩토링)
+
+어제에 이어 피로로 인해 늦게 일어나고 집안일로 많은 시간을 소모하며 많은 시간을 개발에 할애하지 못함. 다만 기존 코드 리팩토링에 잠시 시간을 소모함.
+
+#### 옵저버 패턴 도입
+
+기존에 폴링(매 프레임 상태를 직접 확인하러 가는 방식)으로 처리하던 입력/오디오 상태 확인을 이벤트 기반 옵저버 패턴으로 전환했다.
+
+- **InputManager**: `ConsumeCancel()` 폴링 → `event Action OnCancelAction` 이벤트 발송으로 전환. GameManager가 구독하여 ESC 입력 시 즉시 커서 토글을 수행한다.
+- **AudioManager**: `event Action<bool> OnPlayStateChanged` 이벤트를 추가하여 재생/정지 상태를 방송한다. AudioAnalyzer가 이를 구독하여 자체 `_isAnalyzing` 플래그로 분석 상태를 제어한다.
+
+이로써 Update에서 매 프레임 매니저에 상태를 물어보는 대신, 상태 변경 시점에만 이벤트가 발생하는 구조로 개선되었다.
+
+#### 앱 종료 시 이벤트 해제 안전 처리
+
+앱 종료 과정에서 싱글톤 파괴 순서가 보장되지 않아, 이미 파괴된 인스턴스에 접근하면서 경고 로그가 발생하는 문제를 해결했다.
+
+- `Singleton<T>`에 `public static bool IsQuitting` 읽기 전용 프로퍼티를 추가하여, 종료 상태를 외부에서 확인할 수 있도록 했다.
+- Singleton을 상속한 클래스(GameManager)는 `IsQuitting`으로 직접 접근하고, 일반 MonoBehaviour(AudioAnalyzer)는 `Singleton<AudioManager>.IsQuitting`으로 접근하여 종료 시 구독 해제를 스킵한다.
 
 ---
 아래는 오디오 구현 이후 시도
