@@ -40,7 +40,7 @@ namespace Tunnel
                 // 부모 기준의 로컬 좌표를 세팅한다
                 _cubes[i].localPosition = pos;
                 
-                // 배치 각도만큼 Z축 회전 -> 로컬 Y축이 방사 방향과 일치
+                // 배치 각도만큼 Z축 회전 -> 로컬 X축이 방사 방향과 일치
                 // 터널 벽처럼 중심에서 바깥을 향하는 형태가 된다
                 // localRotation을 사용하여 부모 기준의 로컬 회전을 명확히 한다
                 _cubes[i].localRotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg);
@@ -61,11 +61,20 @@ namespace Tunnel
             {
                 // 큐브 인덱스를 밴드 수로 나눈 나머지로 밴드 순환 할당
                 int bandIndex = i % bandBuffer.Length;
+                
                 // 기본 스케일 1에 밴드 값을 더해 음악 반응 크기 변화 생성
                 // scaleMultiplier로 반응 강도 조절 (인스펙터 튜닝용)
                 float scale = 1f + bandBuffer[bandIndex] * scaleMultiplier;
+                
                 // 원래 비율을 유지한 채 오디오 반응값을 곱한다
-                _cubes[i].localScale = _baseScales[i] * scale;
+                //_cubes[i].localScale = _baseScales[i] * scale;
+                
+                // Y(방사 방향)만 반응시켜 옆/앞뒤 큐브와 겹치지 않게 한다
+                _cubes[i].localScale = new Vector3(
+                    _baseScales[i].x + scale,
+                    _baseScales[i].y,
+                    _baseScales[i].z
+                );
             }
         }
         

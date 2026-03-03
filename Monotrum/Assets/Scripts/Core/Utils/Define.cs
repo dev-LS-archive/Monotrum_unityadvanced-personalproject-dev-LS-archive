@@ -20,7 +20,7 @@ namespace Core
             public const string MotionSpeed = "MotionSpeed";
         }
     }
-
+    
     // 전역에서 사용할 Enum (게임 상태 등)
     // 클래스 밖에 선언해서 Define.GameState가 아니라 그냥 GameState로 쓰게 함
     public enum GameState
@@ -30,12 +30,5 @@ namespace Core
         Playing,    // 게임 플레이 중
         Pause,      // 일시 정지
         Clear       // 엔딩
-    }
-    
-    public enum PlayerState
-    {
-        Idle,
-        Move,
-        Jump
     }
 }
