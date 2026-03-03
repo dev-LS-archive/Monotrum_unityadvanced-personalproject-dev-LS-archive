@@ -623,7 +623,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 26.991467
   orthographic: 0
   orthographic size: 5
@@ -948,8 +948,7 @@ MonoBehaviour:
   _cubesPerRing: 48
   _tunnelRadius: 8
   _ringSpacing: 2
-  _cubeThickness: 1
-  _overlapRatio: 1.05
+  _overlapRatio: 0.65
   _poolSize: 40
   _despawnDistance: 10
   _scaleMultiplier: 0.3
@@ -1016,17 +1015,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7349961732588093129, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
-      propertyPath: m_Controller
+    - target: {fileID: 7755819120504708134, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
+      propertyPath: _animator
       value: 
-      objectReference: {fileID: 9100000, guid: 5d5603d7af037e1498d1f99450574dca, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7914340474753027300, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
       propertyPath: m_Name
       value: UnityChanSSU_VSB
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914340474753027300, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

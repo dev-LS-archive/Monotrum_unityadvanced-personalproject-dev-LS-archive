@@ -9,6 +9,7 @@ namespace Core
         private MonotrumInput _input;
         
         public event Action OnCancelAction;
+        public event Action OnJumpAction;
         
         // 현재 입력 상태
         public Vector2 MoveInput { get; private set; }
@@ -64,7 +65,8 @@ namespace Core
         private void OnJump(InputAction.CallbackContext ctx)
         {
             if (_isInputBlocked) return;
-            Logger.Instance.LogInfo("OnJump");
+            // Logger.Instance.LogInfo("OnJump");
+            OnJumpAction?.Invoke();
         }
 
         private void OnInteract(InputAction.CallbackContext ctx)

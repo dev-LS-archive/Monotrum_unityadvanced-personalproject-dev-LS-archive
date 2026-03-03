@@ -7239,24 +7239,24 @@ MonoBehaviour:
         originalMesh: {fileID: 0}
     selectionData:
       positions:
-      - x: 0.13570964
+      - x: 0.13570969
         y: 1.45331
-        z: -0.09314072
+        z: -0.09314075
       - x: 0.12153995
         y: 1.4478325
-        z: 0.00033676624
-      - x: -0.13570964
+        z: 0.00033680414
+      - x: -0.13570969
         y: 1.4533099
-        z: -0.09314072
-      - x: -0.12153995
+        z: -0.09314077
+      - x: -0.12153999
         y: 1.4478323
-        z: 0.00033676624
-      - x: 0
+        z: 0.00033678178
+      - x: 0.0000000068175723
         y: 1.6315608
-        z: 0.019354105
-      - x: 0
+        z: 0.019354152
+      - x: 0.000000010848453
         y: 1.6277229
-        z: 0.11736953
+        z: 0.11736964
       attributes:
       - Value: 1
       - Value: 2
@@ -7264,7 +7264,7 @@ MonoBehaviour:
       - Value: 2
       - Value: 1
       - Value: 2
-      maxConnectionDistance: 0.098090544
+      maxConnectionDistance: 0.0980906
       userEdit: 0
     preBuildData:
       enabled: 0
@@ -8123,24 +8123,24 @@ MonoBehaviour:
         originalMesh: {fileID: 0}
     selectionData:
       positions:
-      - x: -0.08730364
+      - x: -0.08730359
         y: 1.5955806
-        z: 0.01883161
-      - x: -0.13790095
+        z: 0.018831575
+      - x: -0.1379009
         y: 1.6598653
-        z: -0.037557006
-      - x: -0.10261905
+        z: -0.03755705
+      - x: -0.10261903
         y: 1.6338303
-        z: -0.097448945
-      - x: -0.08607268
+        z: -0.09744896
+      - x: -0.08607272
         y: 1.6561127
-        z: -0.19665849
+        z: -0.1966585
       attributes:
       - Value: 1
       - Value: 2
       - Value: 2
       - Value: 2
-      maxConnectionDistance: 0.103018545
+      maxConnectionDistance: 0.10301854
       userEdit: 0
     preBuildData:
       enabled: 0
@@ -12398,24 +12398,24 @@ MonoBehaviour:
         originalMesh: {fileID: 0}
     selectionData:
       positions:
-      - x: 0.087303996
+      - x: 0.08730404
         y: 1.5955806
-        z: 0.01883161
-      - x: 0.13790143
+        z: 0.018831575
+      - x: 0.13790147
         y: 1.6598654
-        z: -0.037557006
-      - x: 0.10261941
+        z: -0.03755705
+      - x: 0.10261942
         y: 1.6338303
-        z: -0.097448826
+        z: -0.097448856
       - x: 0.08607316
         y: 1.6561127
-        z: -0.19665837
+        z: -0.19665833
       attributes:
       - Value: 1
       - Value: 2
       - Value: 2
       - Value: 2
-      maxConnectionDistance: 0.10301852
+      maxConnectionDistance: 0.103018455
       userEdit: 0
     preBuildData:
       enabled: 0
@@ -14313,6 +14313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6897031307504003417}
   - component: {fileID: 7349961732588093129}
+  - component: {fileID: 7755819120504708134}
   m_Layer: 0
   m_Name: UnityChanSSU_VSB
   m_TagString: Untagged
@@ -14354,7 +14355,7 @@ Animator:
   m_GameObject: {fileID: 7914340474753027300}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f2c836f3e5c029140a0cc913d7df766a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dacad4f2fe7019044836fa430f483431, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -14366,6 +14367,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7755819120504708134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914340474753027300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1258efe878002e346a5d92ce97381c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  _animator: {fileID: 7349961732588093129}
+  _maxRunSpeed: 6
+  _speedLerpRate: 3
+  _jumpForce: 5
+  _gravity: -15
 --- !u!1 &8041012305202216941
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Audio;
 using Core;
+using Player;
 
 namespace Tunnel
 {
@@ -23,7 +24,6 @@ namespace Tunnel
         [SerializeField] private float _ringSpacing = 2f;
 
         [Header("Cube Scale")]
-        [SerializeField] private float _cubeThickness = 0.5f;
         [SerializeField] private float _overlapRatio = 1.05f;
         
         [Header("Pool & Spawn")]
@@ -44,6 +44,9 @@ namespace Tunnel
 
         // 다음 링이 배치될 Z 좌표를 추적
         private float _nextSpawnZ = 0f;
+        
+        // 플레이어의 입력으로 터널 속도 연동
+        private PlayerController _playerController;
 
         private void Awake()
         {
@@ -57,6 +60,8 @@ namespace Tunnel
 
             if (_audioAnalyzer == null)
                 _audioAnalyzer = FindFirstObjectByType<AudioAnalyzer>();
+            
+            _playerController = _player.GetComponent<PlayerController>();
         }
 
         private void Start()
@@ -103,11 +108,11 @@ namespace Tunnel
             float arcLength = 2f * Mathf.PI * _tunnelRadius / _cubesPerRing;
             for (int i = 0; i < _cubesPerRing; i++)
             {
-                // X: 호 방향, Y: 방사 방향(두께), Z: 터널 진행 방향
+                // X: 방사 방향(두께), Y: 호 방향, Z: 터널 진행 방향
                 // 1.05f 오버랩으로 카메라 각도에 따른 미세한 틈 방지
                 cubes[i].localScale = new Vector3(
+                    arcLength,
                     arcLength * _overlapRatio,
-                    _cubeThickness,
                     _ringSpacing * _overlapRatio
                 );
             }
@@ -126,8 +131,8 @@ namespace Tunnel
         /// </summary>
         private void RecycleRings()
         {
-            // 전체 링을 TrackData 속도에 맞춰 플레이어 쪽으로 이동
-            float moveStep = _currentTrack.trackScrollSpeed * Time.deltaTime;
+            // 전체 링을 TrackData 속도에 맞춰 플레이어 쪽으로 이동 + 플레이어의 이동에 따라 속도 조절(SpeedRatio)
+           float moveStep = _currentTrack.trackScrollSpeed * _playerController.SpeedRatio * Time.deltaTime;
             
             foreach (var ring in _activeRings)
             {
