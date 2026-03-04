@@ -16,6 +16,7 @@ namespace Audio
         
         [Header("Visual Theme")]
         [Tooltip("이 곡이 재생될 때 맵(큐브)이나 배경의 메인 컬러")]
+        [ColorUsage(false,true)]
         public Color themeColor = Color.cyan;
         
         [Tooltip("이 곡에서의 큐브 생성/이동 기본 속도")]

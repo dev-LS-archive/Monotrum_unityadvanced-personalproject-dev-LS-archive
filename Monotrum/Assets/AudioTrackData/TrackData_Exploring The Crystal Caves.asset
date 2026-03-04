@@ -16,5 +16,5 @@ MonoBehaviour:
   trackArtist: Asher Fulero
   clip: {fileID: 8300000, guid: c97a0f60fdbba6b44b762c96828ea8ef, type: 3}
   bpm: 82
-  themeColor: {r: 0, g: 1, b: 1, a: 1}
+  themeColor: {r: 1.0466348, g: 2.3893232, b: 7.3962264, a: 1}
   trackScrollSpeed: 30

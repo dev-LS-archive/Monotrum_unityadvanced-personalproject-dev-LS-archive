@@ -688,7 +688,69 @@ ratio가 1(정속)일 때는 `_normalSnapshot.TransitionTo(0f)`로 즉시 전환
 보간 시간을 `Time.deltaTime`으로 설정하여 스냅샷이 SpeedRatio를 즉시 추종하도록 했다. 부드러운 감속의 원천은 PlayerController의 Lerp 하나로 통일되어 이중 보간이 발생하지 않는다.
 
 ### Day 7 - 2026-03-04 (오디오 상호 작용 및 비주얼 연동 폴리싱)
-에미션 강도 반응, 포스트 프로세싱, UI 타이틀 화면 착수
+이미션 강도 반응, 포스트 프로세싱, UI 타이틀 화면 착수
+
+#### Post Processing 작업(LookDev)
+
+우선 비주얼 작업을 하기에 앞서 터널을 에디터 모드에서 비주얼을 확인하기 위해 플레이 모드에서 프로젝트 창으로 드래그해 프리팹을 만든 후 씬에 배치해 작업을 진행했다.
+
+Beautify를 Global Volume에 추가한다.
+
+화면을 보며 조정.
+톤매핑은 화려한 네온 느낌의 이미션과 툰셰이딩 캐릭터에 어울리는 리니어로 설정한다.
+채도는 기본설정 유지
+밝기와 대비를 기존 대비 약 1.2배 정도 올려 시각적 대비를 강화시킨다.
+
+Bloom은 이미션의 네온스러운 느낌을 살리는데 있어 필수적이다.
+다만 너무 과도하지 않게 수치를 조정하고 퍼지는 정도를 약하게 설정한다.
+또한 안티플리커 옵션을 켜서 블룸의 점멸과 필요 이상의 확산을 막는다.
+
+그리고 Beautify의 강점 중 하나인 Anamophic Flares를 켜준다.
+카메라에서 빛이 아나모픽 렌즈에 의해 길게 늘여지는 듯한 효과를 연출한다.
+이것도 블룸처럼 퍼지는 정도와 강도를 적절한 선에서 조절하고 안티플리커 옵션으로 점멸을 방지한다.
+라이팅의 글리치 같은 느낌과 디지털 미디어스러운 느낌을 강화했다.
+
+마지막으로 Vignette를 적용하여 외곽을 어둡게 처리하고 화면 중심에 집중할수 있게한다.
+
+![alt text](Resources/Beautify_BnA.png)
+왼쪽 Beautify 적용 전 / 오른쪽 Beautify 적용 후
+
+#### 터널 이미션 반응 추가
+
+SpeedRatio와 오디오 펄스 두 가지를 결합하여 터널 큐브의 이미션 강도를 제어한다.
+
+**구조:**
+```
+SpeedRatio (테이프 스톱 비율) × (1.0 + audioPulse (저음부 반응))
+    → _cubeMaterial.SetColor(EmissionColor, themeColor * intensity)
+```
+
+- SpeedRatio가 1(정속)일 때 themeColor 원본 + 오디오 펄스로 밝기가 맥박침
+- SpeedRatio가 0(정지)일 때 `_minEmissionIntensity`까지 내려가며 오디오 펄스도 무효화되어 암전
+
+**배칭 유지:**
+
+`Renderer.material`로 개별 접근하면 머티리얼 인스턴스가 복제되어 SRP Batcher가 깨진다. 모든 큐브가 같은 머티리얼을 공유하므로 큐브에서 공통적으로 사용하는 머티리얼 하나에 `SetColor`를 호출하여 전체 큐브가 동시에 반응하면서 배칭을 유지한다.
+
+처음에 `Shader.SetGlobalColor`로 시도했으나, SRP Batcher의 UnityPerMaterial CBUFFER가 글로벌 값보다 우선하여 반영되지 않았다. `Material.SetColor`는 해당 CBUFFER를 직접 갱신하므로 정상 동작한다.
+
+**오디오 펄스 제어:**
+
+AudioAnalyzer의 BandBuffer[0](저음부/킥)을 `_emissionPulseMultiplier`로 증폭한 뒤 `Clamp01`로 상한을 잡았다. 상한이 없으면 킥 타이밍에 intensity가 5~6까지 튀어 눈이 아프고 에미션 라인 선명도가 떨어진다. 멀티플라이어를 0.1 정도로 낮게 설정하여 은은하게 맥박치는 수준으로 튜닝했다.
+
+**themeColor:**
+
+TrackData(SO)의 `themeColor`를 `[ColorUsage(false, true)]`로 HDR 대응하여, 곡마다 다른 네온 색상이 터널에 자동 적용되는 구조다.
+
+#### 색수차(ChromaticAberration) 반응 추가
+
+[Beautify3 URP 공식문서](https://kronnect.com/docs/beautify-urp/scripting/)를 참고하여 스크립트로 색수차를 제어한다.
+
+#### TrackData(SO) 수정을 통한 곡별 비주얼 수정 작업 진행
+런타임 중에 themeColor를 수정하는 식으로 SO를 통해 곡 분위기에 맞는 컬러로 편리하게 수정함
+
+
+
 
 ### Day 8 - 2026-03-05 (UI 작업 & 최종 연동 작업 및 최적화)
 UI 마무리, 씬 연결 및 초기화 작업, 버그 수정, 빌드, 배포

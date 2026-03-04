@@ -16,5 +16,5 @@ MonoBehaviour:
   trackArtist: Ofshane
   clip: {fileID: 8300000, guid: fd4f5ad2de899e444a193240072d6d6e, type: 3}
   bpm: 122
-  themeColor: {r: 0, g: 1, b: 1, a: 1}
+  themeColor: {r: 4.1223254, g: 3.561376, b: 5.9921575, a: 1}
   trackScrollSpeed: 30
