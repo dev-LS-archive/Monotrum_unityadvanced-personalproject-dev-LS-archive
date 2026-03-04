@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6065850229748831220}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FL_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1584007352421300155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_04=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1846108323080868558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2285659778319201101}
   - component: {fileID: 6066229056803083041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5366584977964875600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_hood_F_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3099848245125314714}
   - component: {fileID: 649271060884258046}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ParkerLED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8786505958656805619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Shin_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6102143472348064726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_C02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9051288016850929853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Toe_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4951247302781319889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FI_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7558041004052995666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Toe_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312028262119411725}
   - component: {fileID: 8369076363483560835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_HeadPhone_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762068398808229995}
   - component: {fileID: 3871876923899745113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2035362999140948028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_LegRibbon_A_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4635130851828240884}
   - component: {fileID: 3512789634445538139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_A01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 7649600452338250972}
   - component: {fileID: 5053085271967822208}
   - component: {fileID: 7159200612636782757}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Head_Def
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6110007685260752975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FL_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1130,7 +1130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8316610278141309486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_L_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003058881950213629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 5243120163947006619}
   - component: {fileID: 6011575729124058476}
   - component: {fileID: 3471506106755234789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeshRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5507700446941364553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid0_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6702839644788653933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,7 +1363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3278581288727146629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947063467186816226}
   - component: {fileID: 2749280724563062824}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: HoodieBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4836522099587007074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_06=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4289537375673964175}
   - component: {fileID: 3285274388113051651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_Head_HairF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4819383579698452863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_UpperChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7939756399787718857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1795,7 +1795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6999097497062065440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh0_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,7 +1827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 399896011699636182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Uppe_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6057852907946185365}
   - component: {fileID: 5066064428368297738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1912,7 +1912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6826544568465243100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FM_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +1943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5202725393347022296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_06=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,7 +1975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4227326199020417203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_ArmRibbon_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2008,7 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5237107795230810541}
   - component: {fileID: 8017535616159160064}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2262,7 +2262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7220336394456501900}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn0_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370940658419226711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FI_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2325,7 +2325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5192766580772911308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TW_Knee_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2356,7 +2356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 951949408887907609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid0_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,7 +2389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047676165156587358}
   - component: {fileID: 4003158011646656941}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Zipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3757686363803291370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_momi_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1966326477569337368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_05=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5208576577351345953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2737,7 +2737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8649761802227292281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2769,7 +2769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4141164055138395573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 997956167538534198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2838,7 +2838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4379414214791976488}
   - component: {fileID: 2454633960315356941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ribbons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3632,7 +3632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2161414423929628406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Tale_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3663,7 +3663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8695742218164890151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_R_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3695,7 +3695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6677315927477592542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FF_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3726,7 +3726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7689007159544776945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3759,7 +3759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050997943478717904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3791,7 +3791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175441174948130229}
   - component: {fileID: 3391797508877936186}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: hairFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4045,7 +4045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4379573091592436875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_LegRibbon_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4076,7 +4076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8820813178625227089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_For_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4111,7 +4111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1730129457663655022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_hood_R=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4144,7 +4144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3684880675034504335}
   - component: {fileID: 6631446314065655314}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4398,7 +4398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7860313192486965579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FE_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4432,7 +4432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9015411540747827251}
   - component: {fileID: 9083410825013882798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShirtLED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4686,7 +4686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4706442603261491348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_hood_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4717,7 +4717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8500746243664235552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_ArmRibbon_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8298406136158353193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_LegRibbon_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4780,7 +4780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2985812060170174278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_C02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4811,7 +4811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1751299834851340245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FJ_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4844,7 +4844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2543714125169642525}
   - component: {fileID: 8696434991941972262}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: EyesHL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5098,7 +5098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806614225707569519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FC_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5129,7 +5129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 304079772509590651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FI_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5161,7 +5161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4311281589402310672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5193,7 +5193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2533770082616852285}
   - component: {fileID: 7654442646395332819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5245,7 +5245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9105219088835835346}
   - component: {fileID: 6014847775552038346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5296,7 +5296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717115816940245760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_A02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5327,7 +5327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3696607561097869772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5364,7 +5364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6023995469307162262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_Eri_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5395,7 +5395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8402108170883084852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5426,7 +5426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3417144646830539645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5458,7 +5458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2252958296672575120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Tale_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5490,7 +5490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1130863226725530846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5522,7 +5522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4467840529838560454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: J_Hair_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5574,7 +5574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5819358836324252159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FF_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5606,7 +5606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3742659443716438133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_momi_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5637,7 +5637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8340687457061609841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn0_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5670,7 +5670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8157765319874343522}
   - component: {fileID: 1250191765787204203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6422,7 +6422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 669967764564517584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_04=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6454,7 +6454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8928492771161392292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FN_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6486,7 +6486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3606404453651062902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_R_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6518,7 +6518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7461922067198874305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FO_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6550,7 +6550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5730083306227526405}
   - component: {fileID: 393055773011119326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7312,7 +7312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8260422350747261468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TW_Elbow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7343,7 +7343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3817309740479210181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_For_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7378,7 +7378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5458505270146370210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_momi_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7410,7 +7410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2998935476807722759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7442,7 +7442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2590053989787431131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP0_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7475,7 +7475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9184773269555450058}
   - component: {fileID: 1509609454997836048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadRibbon_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8188,7 +8188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6695976983496763885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_Eri_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8219,7 +8219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5257019988284496927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FJ_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8250,7 +8250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3170996268794888583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Tale_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8282,7 +8282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5365335769056606386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FD_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8313,7 +8313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3611012232666353870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8345,7 +8345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4195709019050712606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8378,7 +8378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4681604224053657739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_L_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8411,7 +8411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9169389910138194154}
   - component: {fileID: 2517596569492476967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8463,7 +8463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5842668822253743025}
   - component: {fileID: 2592381110383530177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8514,7 +8514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7830759210333590937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8551,7 +8551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4600980516233659941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR0_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8583,7 +8583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835706078971247292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_LegRibbon_A_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8615,7 +8615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8381993702909313528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8647,7 +8647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8453713207948341473}
   - component: {fileID: 1647842828287096578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8698,7 +8698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7430588422300930006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8736,7 +8736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102808517787498141}
   - component: {fileID: 3742931326156302921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_C01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8788,7 +8788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644029816131587581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_A02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8819,7 +8819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153989762326936127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_hood_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8851,7 +8851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073013651828162450}
   - component: {fileID: 2563574708703090550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8902,7 +8902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7419012956228494956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Shou_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8935,7 +8935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8282724204818974459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8967,7 +8967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260885000871082880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Osage_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8998,7 +8998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770832599303096405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_LegRibbon_B_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9029,7 +9029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7370883510936113556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FO_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9061,7 +9061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7069648818828678067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_05=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9094,7 +9094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7057725373999471862}
   - component: {fileID: 8799720739174547100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9145,7 +9145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7032658240018981471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_hood_F=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9178,7 +9178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433659829093208961}
   - component: {fileID: 8438201979180710406}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: UpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9432,7 +9432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6179656320000724725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Thigh_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9468,7 +9468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7063486198011586213}
   - component: {fileID: 111908343379424566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_HeadPhone_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9519,7 +9519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7149922401722342733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9556,7 +9556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8859525491592863980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_hood_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9589,7 +9589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2204194015055325670}
   - component: {fileID: 2304851369412249071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9641,7 +9641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8915644888975236996}
   - component: {fileID: 1986874024713500272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_A01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9693,7 +9693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054128559176957729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FK_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9725,7 +9725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4304395134249665241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9757,7 +9757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4920023672378752849}
   - component: {fileID: 6685670579645882277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Osage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10726,7 +10726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129770720728292906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_momi_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10758,7 +10758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479581491830194561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FD_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10790,7 +10790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4946338084028969099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10822,7 +10822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8998596410027280248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10855,7 +10855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4223520724457740548}
   - component: {fileID: 4931221983167777211}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Hoodie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11109,7 +11109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748367865827154599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11140,7 +11140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4581366304195990847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FC_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11172,7 +11172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6053296571675779495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Tale_04=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11204,7 +11204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920053463466704755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_B02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11236,7 +11236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3134189017103171235}
   - component: {fileID: 6981860868854811064}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11490,7 +11490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4611864897823260021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FE_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11521,7 +11521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4195101571735472496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11558,7 +11558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4642654784425252647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FL_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11590,7 +11590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 495947087462597227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11622,7 +11622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7080119819428932820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_B02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11653,7 +11653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686704235312177416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11685,7 +11685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075536875473180273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11717,7 +11717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4977793541761223717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR0_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11750,7 +11750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2630750239431288822}
   - component: {fileID: 4587607272192300826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadRibbon_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12463,7 +12463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8805108438582720592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_L_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12495,7 +12495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 347550597920413128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FO_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12528,7 +12528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490095854196167316}
   - component: {fileID: 7217436218588754253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_C01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12580,7 +12580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2332363683234247904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TW_Knee_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12612,7 +12612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080724927303997723}
   - component: {fileID: 4988271607506604888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_Head_HairC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12659,7 +12659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8588974413150279711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12691,7 +12691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827152686084584792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerR1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12723,7 +12723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6857288863164559015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FH_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12754,7 +12754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6108811321663464316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FN_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12785,7 +12785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7979532762942307663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12817,7 +12817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2394891323817905261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FG_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12849,7 +12849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7413266434615491430}
   - component: {fileID: 8748859536677321636}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Tale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13103,7 +13103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1502299687012376383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character1_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13135,7 +13135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5213940806866282824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FH_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13168,7 +13168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7273089332408556236}
   - component: {fileID: 4113875538428426491}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: HairBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13422,7 +13422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1454366019431837274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_hood_L=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13454,7 +13454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9109937997125872090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FN_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13486,7 +13486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595727566843995446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_HeadRibbon_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13517,7 +13517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4753128438200250965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_L_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13549,7 +13549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537025700048603364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_HeadRibbon_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13580,7 +13580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4791492923816389104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Osage_R_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13612,7 +13612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336437993409243672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FG_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13644,7 +13644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7418172833484087756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FI_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13676,7 +13676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856278884278724235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TW_Elbow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13707,7 +13707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3684257123421624728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13738,7 +13738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4002355642811370407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FK_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13769,7 +13769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8520384569148819582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Shin_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13804,7 +13804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2526427832034757670}
   - component: {fileID: 5529186697075423997}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Headphone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14058,7 +14058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7039619267158346270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP0_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14091,7 +14091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7768114821446700456}
   - component: {fileID: 4769500572582255587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14142,7 +14142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8640220638033092930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FP_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14174,7 +14174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6188816519721763046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FM_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14207,7 +14207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4730142024876629424}
   - component: {fileID: 93269478647611197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_R_B01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14260,7 +14260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752178138774556283}
   - component: {fileID: 1142556105888759270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hoodie_Suso_L_B01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14314,7 +14314,7 @@ GameObject:
   - component: {fileID: 6897031307504003417}
   - component: {fileID: 7349961732588093129}
   - component: {fileID: 7755819120504708134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnityChanSSU_VSB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14393,7 +14393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5024462188335613353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerIn2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14424,7 +14424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5530918844358663928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Thigh_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14459,7 +14459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7018405882090701851}
   - component: {fileID: 8602292760661702566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14511,7 +14511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3251007241515504137}
   - component: {fileID: 3348746661311700142}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Bootes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14765,7 +14765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509074328669890869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Osage_L_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14796,7 +14796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846950387315168448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_ArmRibbon_R_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14827,7 +14827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1967202717206288969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Shou_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14861,7 +14861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2315683769277868154}
   - component: {fileID: 8127277367766798270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14912,7 +14912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4679456565726245446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_hood_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14946,7 +14946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2855487402720685241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerP1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14979,7 +14979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7691683258632427337}
   - component: {fileID: 7957414349810304693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15030,7 +15030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134522254679073686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Uppe_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15063,7 +15063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1362460301848754204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerMid2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15094,7 +15094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5150080770224578863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_L_03=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15126,7 +15126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7289701424724828833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_HeadRibbon_R_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15159,7 +15159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3057619748278946717}
   - component: {fileID: 8192294476237479121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15211,7 +15211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045601689609018432}
   - component: {fileID: 8192626298700409087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: J_Hair_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16951,7 +16951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8706764591307474215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Tale_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16983,7 +16983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2966273992660326254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_Eri_R_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17015,7 +17015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6018296474503161680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17049,7 +17049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6003861598460873505}
   - component: {fileID: 3462170083455332849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_LeftUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17100,7 +17100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432476201002372216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_ArmRibbon_L_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17132,7 +17132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497506062515876495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DB_Hair_FP_END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17163,7 +17163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8997612224110986234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_LegRibbon_B_R_01=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17196,7 +17196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7126997906342656913}
   - component: {fileID: 8873918324129140050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COL_MagicaCapsuleCollider_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17247,7 +17247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127806859134902503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CH_FingerTh0_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17279,7 +17279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1947485933693897921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: =====DB_Hair_FE_02=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}

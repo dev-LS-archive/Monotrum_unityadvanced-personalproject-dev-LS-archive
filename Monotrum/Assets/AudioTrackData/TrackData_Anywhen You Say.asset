@@ -16,5 +16,5 @@ MonoBehaviour:
   trackArtist: Cheel
   clip: {fileID: 8300000, guid: e9f02acc0cb1d2c4dbb3090ce1714545, type: 3}
   bpm: 138
-  themeColor: {r: 0, g: 1, b: 1, a: 1}
+  themeColor: {r: 5.9921565, g: 4.243119, b: 3.7285829, a: 1}
   trackScrollSpeed: 30

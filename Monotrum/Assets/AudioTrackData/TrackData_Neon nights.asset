@@ -16,5 +16,5 @@ MonoBehaviour:
   trackArtist: Patrick Patrikios
   clip: {fileID: 8300000, guid: 75b47c51d37d6404a8f3b160c3507f46, type: 3}
   bpm: 146
-  themeColor: {r: 0, g: 1, b: 1, a: 1}
+  themeColor: {r: 0, g: 5.9921575, b: 5.9921575, a: 1}
   trackScrollSpeed: 30

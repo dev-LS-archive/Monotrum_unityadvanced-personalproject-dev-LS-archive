@@ -24,7 +24,16 @@ namespace Player
         private bool _isGrounded = true;
         
         // 테이프 스톱 연동용
-        public float SpeedRatio => _currentSpeed / _maxRunSpeed;
+        public float SpeedRatio
+        {
+            get
+            {
+                float ratio = _currentSpeed / _maxRunSpeed;
+                if (ratio > 0.99f) return 1f;
+                if (ratio < 0.01f) return 0f;
+                return ratio;
+            }
+        }
 
         private void Start()
         {

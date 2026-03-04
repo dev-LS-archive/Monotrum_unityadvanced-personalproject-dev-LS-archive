@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Audio;
+using Beautify.Universal;
 using Core;
 using Player;
 
@@ -8,6 +10,8 @@ namespace Tunnel
 {
     public class TunnelGenerator : MonoBehaviour
     {
+        private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
         [Header("References")]
         [SerializeField] private TunnelRing _ringPrefab;
         [SerializeField] private Transform _cubePrefab;
@@ -26,6 +30,10 @@ namespace Tunnel
         [Header("Cube Scale")]
         [SerializeField] private float _overlapRatio = 1.05f;
         
+        [Header("Cube Visualization")]
+        [SerializeField] private Material _cubeMaterial;
+        [SerializeField] private float _minEmissionIntensity = 0.1f;
+        
         [Header("Pool & Spawn")]
         [Tooltip("동시에 활성화될 링 수 (카메라 Far Clip Plane 커버)")]
         [SerializeField] private int _poolSize = 40;
@@ -34,6 +42,13 @@ namespace Tunnel
 
         [Header("Audio Reaction")]
         [SerializeField] private float _scaleMultiplier = 1.5f;
+
+        [Tooltip("Beautify 색수차 최대 수치")]
+        [SerializeField, Range(0.005f, 0.1f)] 
+        private float _maxChromaticAberration = 0.1f;
+
+        [Tooltip("오디오 비트에 따른 이미션 발광 강도 증폭량"), SerializeField, Range(0, 1)]  
+        private float _emissionPulseMultiplier = 0.5f;
 
         // 링 풀과 큐브 풀을 분리하여 각각 독립적으로 관리
         private ObjectPool<TunnelRing> _ringPool;
@@ -64,6 +79,11 @@ namespace Tunnel
             _playerController = _player.GetComponent<PlayerController>();
         }
 
+        private void OnDestroy()
+        {
+            _cubeMaterial.SetColor(EmissionColor, _currentTrack.themeColor);
+        }
+
         private void Start()
         {
             SpawnInitialRings();
@@ -73,6 +93,7 @@ namespace Tunnel
         {
             RecycleRings();
             UpdateRingVisuals();
+            UpdateEmission();
         }
 
         /// <summary>
@@ -142,14 +163,11 @@ namespace Tunnel
             // 링들이 다가온 만큼 다음 스폰 좌표도 함께 당겨온다
             _nextSpawnZ -= moveStep;
             
-            // 가장 오래된 링이 플레이어 뒤로 넘어갔는지 검사
-            if (_activeRings.Count == 0) return;
-
-            TunnelRing oldestRing = _activeRings.Peek();
-            if (oldestRing.transform.position.z < _player.position.z - _despawnDistance)
+            // 수정 제안 코드
+            while (_activeRings.Count > 0 && _activeRings.Peek().transform.position.z < _player.position.z - _despawnDistance)
             {
-                _activeRings.Dequeue();
-
+                TunnelRing oldestRing = _activeRings.Dequeue();
+    
                 // 기존 큐브를 링에서 분리하여 풀에 반환
                 Transform[] oldCubes = oldestRing.DetachCubes();
                 if (oldCubes != null)
@@ -161,7 +179,7 @@ namespace Tunnel
                 // 링 자체도 풀에 반환
                 _ringPool.Return(oldestRing);
 
-                // 터널 맨 앞에 새 링을 생성 (SpawnRing이 _nextSpawnZ를 갱신)
+                // 터널 맨 앞에 새 링을 생성
                 SpawnRing();
             }
         }
@@ -177,6 +195,37 @@ namespace Tunnel
             {
                 ring.UpdateVisual(_audioAnalyzer.BandBuffer, _scaleMultiplier);
             }
+        }
+        
+        // 플레이어 입력 및 오디오 데이터에 따라 이미션 강도 조절
+        private void UpdateEmission()
+        {
+            // 1. 오디오 데이터 가져오기 (예: 밴드 0번 또는 1번이 킥/베이스 담당)
+            float audioPulse = 0f;
+            if (_audioAnalyzer != null && _audioAnalyzer.BandBuffer != null)
+            {
+                // 저음부(베이스)의 값을 가져와 증폭
+                audioPulse = _audioAnalyzer.BandBuffer[0] * _emissionPulseMultiplier;
+                audioPulse = Mathf.Clamp01(audioPulse);
+            }
+
+            // 2. 테이프 스톱 비율(SpeedRatio)과 오디오 펄스를 결합
+            // SpeedRatio가 0(정지)이면 audioPulse도 무효화되어 서서히 암전됨
+            float targetIntensity = 1f + audioPulse;
+            float intensity = Mathf.Lerp(_minEmissionIntensity, targetIntensity, _playerController.SpeedRatio);
+    
+            _cubeMaterial.SetColor(EmissionColor, _currentTrack.themeColor * intensity);
+
+            UpdateAberrationIntensity(audioPulse);
+        }
+        
+        // UpdateEmission()에서 추출한 audioPulse(0~1) 값을 넘겨받아 사용
+        public void UpdateAberrationIntensity(float pulseValue)
+        {
+            // BeautifySettings 싱글톤을 통해 현재 씬의 프로필 값을 즉시 오버라이드
+            // pulseValue에 최대 강도를 곱해서 적용
+            float finalIntensity = Mathf.Clamp(pulseValue * _maxChromaticAberration, 0f, 0.1f);
+            BeautifySettings.settings.chromaticAberrationIntensity.Override(finalIntensity);
         }
     }
 }

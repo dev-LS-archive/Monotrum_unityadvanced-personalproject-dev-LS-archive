@@ -16,5 +16,5 @@ MonoBehaviour:
   trackArtist: The Soundlings
   clip: {fileID: 8300000, guid: dd20f5b8f3c693244bb4f394339d9076, type: 3}
   bpm: 146
-  themeColor: {r: 0, g: 1, b: 1, a: 1}
+  themeColor: {r: 1.4804797, g: 5.992157, b: 1.3755573, a: 1}
   trackScrollSpeed: 30
