@@ -749,6 +749,27 @@ TrackData(SO)의 `themeColor`를 `[ColorUsage(false, true)]`로 HDR 대응하여
 #### TrackData(SO) 수정을 통한 곡별 비주얼 수정 작업 진행
 런타임 중에 themeColor를 수정하는 식으로 SO를 통해 곡 분위기에 맞는 컬러로 편리하게 수정함
 
+#### 시네머신 카메라 연출 추가
+
+우선 카메라가 추적할 위치를 위해서 플레이어 캐릭터에 자식으로 CamRoot라는 이름의 빈 오브젝트를 만든다.
+현재 캐릭터 피봇 기준 1이 카메라의 중심점으로 작업했기에 CamRoot의 높이도 1로 잡는다.
+
+캐릭터는 제자리에서 움직이지 않고 맵만 움직이므로 시네머신 카메라의 포지션은 None으로 두어도 상관 없다.
+
+대신 캐릭터가 점프할때 카메라가 시선을 따라가게 만들기 위해 Rotation Composer 컴포넌트를 추가하고 다른 기능 필요없이 Y축 댐핑값을 신경써서 세팅해준다.
+
+#### CameraControl 스크립트 작성
+
+Focal Length를 SpeedRatio에 반비례하게 조절하여, 정지 시 망원(좁은 화각)으로 터널 압축감을, 달릴 때 광각(넓은 화각)으로 속도감을 연출한다.
+
+또한 CinemachineImpulse를 스크립트 차원에서 더하는 연출을 한다.
+
+시네머신 카메라에 Impulse리스너와 소스 컴포넌트를 추가한다.
+
+[시네머신 임펄스 소스](https://docs.unity3d.com/kr/Packages/com.unity.cinemachine@2.3/manual/CinemachineImpulseSource.html)
+
+Impulse Type 
+Impulse Shape
 
 
 
