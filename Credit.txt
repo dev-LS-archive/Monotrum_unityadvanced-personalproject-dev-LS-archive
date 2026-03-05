@@ -1,0 +1,28 @@
+Info
+
+Monotrum (모노트럼 / モノトラム) 
+
+--------------------
+Made with Unity
+
+Character Asset
+
+UI Asset
+
+Modern UI Pack
+https://assetstore.unity.com/packages/tools/gui/modern-ui-pack-201717
+
+Used Font
+
+MS Mincho
+
+Morena
+https://befonts.com/morena-typeface.html
+
+瀞ノグリッチ黒体・瀞ノグリッチ明朝
+https://booth.pm/ja/items/3041172
+
+Image
+
+Moon
+https://opengameart.org/content/moon-overlay-texture

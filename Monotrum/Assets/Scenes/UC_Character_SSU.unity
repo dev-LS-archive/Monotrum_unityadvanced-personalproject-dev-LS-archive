@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 8af5f58a8d180a44e835361e0067bf00, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 302cdd4fb7d85d2438114236a7401aa5, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -812,11 +812,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7349961732588093129, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 20d3bf8777c1a7e4f8fff287a70f6161, type: 2}
     - target: {fileID: 7914340474753027300, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
       propertyPath: m_Name
       value: UnityChanSSU_VSB
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7755819120504708134, guid: 2c906b6909d1fc94a83c6ff288caef93, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

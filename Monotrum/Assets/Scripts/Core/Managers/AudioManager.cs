@@ -18,7 +18,15 @@ namespace Core
         // 오디오 재생 상태가 변할 때 알리는 이벤트
         public event Action<bool> OnPlayStateChanged;
         
-        public bool IsPlaying => _audioSource.isPlaying;
+        public bool IsPlaying
+        {
+            get
+            {
+                if(_audioSource != null) 
+                    return _audioSource.isPlaying;
+                return false;
+            }
+        }
 
         protected override void Awake()
         {

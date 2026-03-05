@@ -10,6 +10,10 @@ namespace Core
         protected override void Awake()
         {
             base.Awake();
+            
+            QualitySettings.vSyncCount = 0; // VSync 강제 해제 (인풋렉 방지)
+            Application.targetFrameRate = 144; // 144 프레임 고정 (GPU 보호 및 환경 통일)
+            
             InitializeManagers();
             
             if (_lockCursorOnStart)

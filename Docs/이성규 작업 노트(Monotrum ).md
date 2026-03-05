@@ -688,7 +688,6 @@ ratio가 1(정속)일 때는 `_normalSnapshot.TransitionTo(0f)`로 즉시 전환
 보간 시간을 `Time.deltaTime`으로 설정하여 스냅샷이 SpeedRatio를 즉시 추종하도록 했다. 부드러운 감속의 원천은 PlayerController의 Lerp 하나로 통일되어 이중 보간이 발생하지 않는다.
 
 ### Day 7 - 2026-03-04 (오디오 상호 작용 및 비주얼 연동 폴리싱)
-이미션 강도 반응, 포스트 프로세싱, UI 타이틀 화면 착수
 
 #### Post Processing 작업(LookDev)
 
@@ -760,21 +759,123 @@ TrackData(SO)의 `themeColor`를 `[ColorUsage(false, true)]`로 HDR 대응하여
 
 #### CameraControl 스크립트 작성
 
-Focal Length를 SpeedRatio에 반비례하게 조절하여, 정지 시 망원(좁은 화각)으로 터널 압축감을, 달릴 때 광각(넓은 화각)으로 속도감을 연출한다.
+시네머신(Cinemachine 3)과 물리 카메라(Physical Camera)를 활용한 동적 카메라 시스템을 구축했다.
 
-또한 CinemachineImpulse를 스크립트 차원에서 더하는 연출을 한다.
+**시네머신 카메라 기본 세팅:**
 
-시네머신 카메라에 Impulse리스너와 소스 컴포넌트를 추가한다.
+캐릭터 리깅 애니메이션에 의한 미세한 떨림을 방지하기 위해, 플레이어의 자식으로 `CamRoot` 빈 오브젝트를 생성하여 추적 타겟으로 지정했다. (캐릭터 피벗 기준 높이 1)
 
-[시네머신 임펄스 소스](https://docs.unity3d.com/kr/Packages/com.unity.cinemachine@2.3/manual/CinemachineImpulseSource.html)
+트레드밀 방식에서 캐릭터는 제자리에 있으므로 Position Control은 None으로 해제하여 불필요한 추적 연산을 제거했다. Rotation Control에는 Rotation Composer를 추가하고 Y축 Damping만 조절하여 점프 시 카메라가 시선을 부드럽게 따라가도록 했다.
 
-Impulse Type 
-Impulse Shape
+**물리 렌즈(Focal Length) 기반 속도감 연출:**
 
+- SpeedRatio에 따라 초점 거리(Focal Length)를 Lerp로 보간하여 카메라 렌즈 연출을 제어한다.
+- 정지 시 망원(75mm) 렌즈를 적용해 터널의 깊이감과 공간 압축감을 강조한다.
+- 최고 속도 시 인간의 시야와 가장 유사한 왜곡 없는 표준 상태(50mm)로 전환하여, 과장된 렌즈 왜곡 없이도 터널 벽면이 빠르게 스쳐 지나가는 자연스러운 속도감과 개방감을 연출한다.
 
+시네머신 3.x의 Lens 구조체는 FieldOfView(도)를 받으므로, 물리 카메라의 센서 높이와 초점 거리를 아크탄젠트 공식으로 수직 FOV로 변환하여 적용했다.
+```
+fov = 2 × atan(sensorHeight / (2 × focalLength)) × Rad2Deg
+```
+
+**이론 설명**
+1. 카메라 내부의 직각삼각형 상상하기
+실제 카메라의 내부를 옆에서 잘랐다고 가정하면
+- 렌즈(Lens): 빛이 모이는 하나의 점
+- 센서(Sensor): 렌즈 뒤에 위치하여 상이 맺히는 필름(또는 디지털 센서)입니다. 이 센서의 세로 길이가 바로 sensorHeight (예: 24mm)입니다.
+- 초점 거리(Focal Length): 렌즈부터 센서까지의 수평 거리입니다. 이것이 focalLength (예: 50mm)다.
+
+렌즈 중심에서 센서의 맨 위, 그리고 맨 아래로 선을 그으면 하나의 거대한 이등변삼각형이 만들어진다. 이 삼각형의 꼭지점 각도가 바로 구하고자하는 **수직 시야각(Vertical FOV)**이다.
+
+2. 삼각함수(Tangent)의 적용
+이등변삼각형은 계산하기 까다로우니, 정가운데를 가로지르는 선을 그어 위아래 두 개의 직각삼각형으로 반으로 가른다.
+
+위쪽에서 설명한 직각삼각형을 생각하면 다음과 같은 길이를 가진다.
+- 밑변(Adjacent): 렌즈에서 센서까지의 거리 = $f$ (focalLength)
+- 높이(Opposite): 센서 높이의 절반 = $\frac{h}{2}$ (sensorHeight / 2)
+- 각도: 전체 시야각의 절반 = $\frac{FOV}{2}$
+
+학창 시절 배운 삼각함수 **탄젠트(tan)**는 밑변과 높이의 비율을 의미한다.  
+$$\tan\left(\frac{FOV}{2}\right) = \frac{\text{높이}}{\text{밑변}} = \frac{\frac{h}{2}}{f} = \frac{h}{2f}$$
+
+이 수식이 코드에서 `sensorHeight / (2f * _currentFocalLength)` 부분에 해당한다.
+
+3. Mathf.Atan (아크탄젠트)의 역할
+알고자하는 것은 비율이 아니라 각도(FOV) 자체를 알아내야 한다.  
+탄젠트(tan)가 "각도를 넣으면 비율을 알려주는 함수"라면, **아크탄젠트(arctan)**는 "비율을 넣으면 원래 각도를 역추적해서 알려주는 함수"다.  
+C#에서는 이를 Mathf.Atan()으로 지원한다.
+
+양변에 아크탄젠트를 씌우면 다음과 같이 각도만 남게 된다.
+
+$$\frac{FOV}{2} = \arctan\left(\frac{h}{2f}\right)$$
+
+이제 절반으로 나눴던 시야각을 원래대로 복구하기 위해 양변에 2를 곱해줍니다.
+$$FOV = 2 \times \arctan\left(\frac{h}{2f}\right)$$
+
+4. Mathf.Rad2Deg (단위 변환)
+수학 세계(그리고 Mathf.Atan 함수)는 각도를 우리가 흔히 아는 360도 체계(Degree)가 아니라, 파이($\pi$)를 사용하는 라디안(Radian) 단위로 뱉어낸다.
+
+하지만 유니티 인스펙터의 카메라 컴포넌트(FieldOfView)는 60도, 90도 같은 디그리(Degree) 단위를 요구한다.  
+그래서 마지막에 Mathf.Rad2Deg (대략 $180 / \pi$, 약 57.29)를 곱해서 컴퓨터의 수학 단위(라디안)를 인간과 유니티가 이해할 수 있는 단위(디그리)로 변환해 주는 것이다.
+
+**요약**
+`fov = 2f * Mathf.Atan(_sensorHeight / (2f * _currentFocalLength)) * Mathf.Rad2Deg;` 코드는 다음의 논리적 흐름을 완벽하게 코드로 옮긴 것이다.
+
+1. _sensorHeight / (2f * _currentFocalLength) : 센서의 절반과 초점거리로 직각삼각형의 탄젠트 비율을 구한다.
+2. Mathf.Atan(...) : 그 비율을 통해 절반의 시야각(라디안)을 역추적해 낸다.
+3. 2f * : 구한 절반의 각도에 2를 곱해 전체 시야각을 만든다.
+4. * Mathf.Rad2Deg : 라디안을 디그리(도) 단위로 변환해 유니티 카메라에 꽂아 넣는다.
+
+```cs
+_cinemachineCamera.Lens.PhysicalProperties.SensorSize.y
+```
+센서 높이는 하드코딩하지 않고 시네머신 카메라의 `sensorSize.y`를 런타임에 읽어 사용한다.
+
+**오디오 반응형 임펄스 (Cinemachine Impulse):**
+단순한 화면 흔들림이 아닌, 배경 음악의 비트(Kick/Bass)에 정확히 맞아떨어지는 물리적 타격감을 스크립트 차원에서 제어했다.
+
+가상 카메라에 `CinemachineImpulseListener`와 `CinemachineImpulseSource`를 부착하여 하나의 오브젝트에서 임펄스 발생과 수신을 모두 처리하는 구조로 단순화했다.
+
+임펄스 세팅:
+- Type: `Uniform` — 거리 감쇠 없이 화면 전체 진동
+- Shape: `Bump` — 킥 드럼처럼 짧고 굵게 끊어치는 단타형 진동
+
+오디오 데이터 처리에서, BandBuffer[0]의 절대값을 사용하면 베이스 잔향(Decay) 때문에 진동이 연속으로 터지는 문제가 있었다. 이를 해결하기 위해 이전 프레임 대비 변화량(Delta)을 계산하여 값이 튀어오르는 순간만 감지하도록 했다.
+
+- **오디오 데이터 정규화 (Delta 감지):** - 베이스의 잔향(Decay) 때문에 진동이 연속으로 터지는 문제를 해결하기 위해, 절대값이 아닌 **이전 프레임 대비 변화량(Delta)**을 계산하여 튀어 오르는 순간(Snap)만 감지했다.
+- **상황별 타격감 제어 (Gating & Scaling):**
+- 플레이어가 멈춰있을 때(`SpeedRatio < 0.05f`)는 연산을 스킵하여 멀미를 방지.
+- 임펄스 강도를 계산할 때 속도 비율(`SpeedRatio`)을 곱하여, 빠르게 질주할수록 화면이 더 강하게 흔들리도록 다이내믹한 텐션을 부여했다.
 
 ### Day 8 - 2026-03-05 (UI 작업 & 최종 연동 작업 및 최적화)
 UI 마무리, 씬 연결 및 초기화 작업, 버그 수정, 빌드, 배포
+
+#### 타이틀 씬 구성
+
+Unity Indoors 씬 템플릿 위에 캐릭터와 비주얼라이저 바를 배치하고 조명/오브젝트 위치를 조정했다.
+
+![alt text](Resources/Title_BG.png)
+타이틀씬의 카메라에도 시네머신을 넣어 춤추는 캐릭터를 바라보게 한다.
+
+또한 추가 작업에 있어 기반이 될 UI를 시간상 직접 유니티 UI를 수정하는 제작보다는 `ModernUI pack`이라는 에셋으로 빠르게 배치하고 활용한다. 레이아웃등이 적극적으로 활용되는 에셋이라 무거울 수 있지만 생산성에 있어 뛰어나고 비주얼이 뛰어나다.
+
+
+![alt text](Resources/Title_UI.png)  
+UI가 추가된 타이틀씬의 모습
+
+![alt text](Resources/Title_Credit.png)  
+크레딧창
+
+**오디오 재생 흐름:**
+
+비주얼라이저 바가 AudioAnalyzer의 스펙트럼 데이터를 필요로 하므로, 타이틀 씬에서도 AudioManager를 통해 곡을 재생해야 한다.
+
+- **타이틀 씬:** AudioManager에서 타이틀 BGM을 루프 재생, 비주얼라이저 바가 스펙트럼 데이터로 반응
+- **곡 선택:** 타이틀 씬에서 오버레이 UI로 곡 선택
+- **게임 씬 전환:** 타이틀 BGM 정지 → 선택한 곡으로 교체 재생
+
+셀렉터 UI 변경에 따라 재생되는 오디오를 변경하고 오디오 바의 이미션 큐브 머티리얼을 이용해 비주얼을 바꿔 플레이할 터널의 음악과 색상을 미리 볼수 있게한다.
+
 
 ### 최종 빌드
 Day 7 일과 마무리 후 최종 빌드
