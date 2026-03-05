@@ -850,6 +850,18 @@ _cinemachineCamera.Lens.PhysicalProperties.SensorSize.y
 ### Day 8 - 2026-03-05 (UI 작업 & 최종 연동 작업 및 최적화)
 UI 마무리, 씬 연결 및 초기화 작업, 버그 수정, 빌드, 배포
 
+#### 인게임 최적화 및 시스템 세팅
+VSync 해제 및 프레임 고정 (Input Lag 방지)
+
+리듬/액션 게임의 특성상 인풋렉(Input Lag)은 좋지 않으므로, GameManager 초기화 시 QualitySettings.vSyncCount = 0을 적용해 VSync를 강제로 해제했다.
+
+동시에 Application.targetFrameRate = 144로 프레임을 제한하여, 고주사율 모니터 유저의 환경을 만족시키면서도 불필요한 GPU 과부하(타이틀 화면에서 프레임이 괴도하게 올라가는 현상)를 방지했다.
+
+```cs
+ualitySettings.vSyncCount = 0; // VSync 강제 해제 (인풋렉 방지)
+Application.targetFrameRate = 144; // 144 프레임 고정 (GPU 보호 및 환경 통일)
+```
+
 #### 타이틀 씬 구성
 
 Unity Indoors 씬 템플릿 위에 캐릭터와 비주얼라이저 바를 배치하고 조명/오브젝트 위치를 조정했다.
@@ -857,7 +869,7 @@ Unity Indoors 씬 템플릿 위에 캐릭터와 비주얼라이저 바를 배치
 ![alt text](Resources/Title_BG.png)
 타이틀씬의 카메라에도 시네머신을 넣어 춤추는 캐릭터를 바라보게 한다.
 
-또한 추가 작업에 있어 기반이 될 UI를 시간상 직접 유니티 UI를 수정하는 제작보다는 `ModernUI pack`이라는 에셋으로 빠르게 배치하고 활용한다. 레이아웃등이 적극적으로 활용되는 에셋이라 무거울 수 있지만 생산성에 있어 뛰어나고 비주얼이 뛰어나다.
+또한 추가 작업에 있어 기반이 될 UI를 시간상 직접 유니티 UI를 수정하는 제작보다는 `Modern UI pack`이라는 에셋으로 빠르게 배치하고 활용한다. 레이아웃등이 적극적으로 활용되는 에셋이라 무거울 수 있지만 생산성에 있어 뛰어나고 비주얼이 뛰어나다.
 
 
 ![alt text](Resources/Title_UI.png)  
@@ -865,6 +877,15 @@ UI가 추가된 타이틀씬의 모습
 
 ![alt text](Resources/Title_Credit.png)  
 크레딧창
+
+이어서 게임씬의 UI 작업을 진행한다.  
+![alt text](Resources/Game_AudioBar.png)
+하단에 프로그래스바로 곡의 재생 시간 및 곡정보(곡 및 아티스트 이름)를 알려준다.
+![alt text](Resources/Game_Pause.png)
+Esc키를 누르면 게임을 정지하고 타이틀로 돌아가는지 묻는 UI를 띄운다.
+![alt text](Resources/Game_Clear.png)
+곡 재생이 끝나면 클리어 창을 띄운다.
+
 
 **오디오 재생 흐름:**
 
@@ -875,6 +896,46 @@ UI가 추가된 타이틀씬의 모습
 - **게임 씬 전환:** 타이틀 BGM 정지 → 선택한 곡으로 교체 재생
 
 셀렉터 UI 변경에 따라 재생되는 오디오를 변경하고 오디오 바의 이미션 큐브 머티리얼을 이용해 비주얼을 바꿔 플레이할 터널의 음악과 색상을 미리 볼수 있게한다.
+
+UI 에셋의 오프닝 연출 캔버스를 활용하여, 애니메이션 이벤트에서 UnityEvent 배열을 인덱스로 호출하는 `AnimationEvents` 스크립트를 작성했다. 매직 넘버를 사용하는 단점이 있으나 범용성이 높고 에디터에서 작업하기 편리하다. 오프닝 애니메이션 종료 시점에 `AudioManager.SelectTrack()`을 호출하여 타이틀 BGM 재생을 시작한다.
+
+![alt text](Resources/SongSelect.png)
+셀렉터의 `OnItemSelect` 이벤트에 `TrackSelector.SetTrackAndPlay`와 `TrackManager.UpdateThemeColor`를 연결하여, 곡을 변경할 때마다 오디오 재생과 비주얼라이저 바 색상이 동시에 전환되도록 했다.
+
+Play 버튼을 누르면 현재 선택된 TrackData를 AudioManager에 유지한 채 게임 씬으로 전환한다. AudioManager가 싱글톤이므로 씬을 넘어가도 선택 정보가 유지된다.
+
+#### 씬 전환 시 싱글톤 자식 오브젝트 소실 버그
+
+**현상:** 타이틀 씬에서 게임 씬으로 전환 시, DontDestroyOnLoad로 유지되어야 할 AudioManager가 파괴됨.
+
+**원인:** GameManager가 양쪽 씬에 프리팹으로 배치되어 있어 게임 씬 로드 시 중복 인스턴스가 생성된다. Singleton의 `base.Awake()`에서 `Destroy(gameObject)`가 호출되지만, Destroy는 프레임 끝에 실행된다. 그 사이에 `InitializeManagers()` → `RegisterManager<AudioManager>()`가 실행되어 기존 AudioManager를 새(중복) GameManager의 자식으로 reparent시킨다. 프레임 끝에 중복 GameManager가 파괴되면서 자식으로 들어간 AudioManager도 함께 소멸했다.
+
+**수정:** `base.Awake()` 호출 후 자신이 살아남은 인스턴스인지 확인하고, 중복이면 초기화를 건너뛰도록 분기를 추가했다.
+```csharp
+protected override void Awake()
+{
+    base.Awake();
+    if (Instance != this) return;
+    
+    InitializeManagers();
+}
+```
+
+**교훈:** `Destroy()`는 즉시 실행되지 않으므로, 중복 인스턴스에서도 Awake의 나머지 코드가 실행될 수 있다. 싱글톤 패턴에서 초기화 로직은 반드시 중복 체크 이후에 배치해야 한다.
+
+#### SceneLoader 에디터(인스펙터) 한계 우회
+- 이슈: SceneLoader.LoadScene 호출 시 오타를 방지하기 위해 SceneType Enum을 인자로 받는 LoadScene(SceneType) 함수를 만들었으나, 유니티 UI Button의 OnClick이나 애니메이션 이벤트 인스펙터에서는 커스텀 Enum을 지원하지 않음.
+
+- 해결: LoadTitleScene(), LoadGameScene() 처럼 파라미터가 없는 래퍼(Wrapper) 함수를 만들어 인스펙터에서 직접 할당할 수 있도록 에디터 친화적으로 우회했다.
+
+```cs
+public void LoadTitleScene() => LoadScene(SceneType.Title);
+public void LoadGameScene() => LoadScene(SceneType.Game);
+```
+
+#### 게임 씬 연결 작업
+
+타이틀씬에서 오디오매니저나 가지고 온 데이터를 가지고 오프닝 캔버스의 애니메이션이 끝나는대로 선택된 트랙을 재생하며 큐브 재질의 색상을 트랙 데이터의 테마 컬러로 설정해주었다.
 
 
 ### 최종 빌드

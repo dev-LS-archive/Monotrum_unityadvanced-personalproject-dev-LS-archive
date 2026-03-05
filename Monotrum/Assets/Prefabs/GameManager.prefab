@@ -48,6 +48,7 @@ MonoBehaviour:
   _audioMixer: {fileID: 24100000, guid: 60f8908bb71619a47a4e0de048cdb811, type: 2}
   _normalSnapshot: {fileID: 24500006, guid: 60f8908bb71619a47a4e0de048cdb811, type: 2}
   _tapeStopSnapshot: {fileID: -8055070619051169949, guid: 60f8908bb71619a47a4e0de048cdb811, type: 2}
+  SelectedTrack: {fileID: 11400000, guid: db36a86a95d5896439f7056c1efd4e5d, type: 2}
 --- !u!1 &8673204088297950735
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e0de8e9967fb746b2a5f64bc3520ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _lockCursorOnStart: 1
+  _lockCursorOnStart: 0
 --- !u!1001 &681845249432081464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 3125145709205108230, guid: 3d683cfa4388f9e47a826466145ed66d, type: 3}
       propertyPath: m_Name
       value: Logger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125145709205108230, guid: 3d683cfa4388f9e47a826466145ed66d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

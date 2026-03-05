@@ -22,7 +22,10 @@ namespace Core
         protected override void Awake()
         {
             base.Awake();
-        
+            
+            // 중복 인스턴스면 초기화 건너뛰기
+            if (Instance != this) return;
+            
             Init();
         }
 

@@ -5,6 +5,8 @@ namespace Core
 {
     public class TrackManager : MonoBehaviour
     {
+        private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
         [Header("Track Cubes")]
         [Tooltip("8개의 주파수 대역을 표현할 큐브(비주얼라이저)를 저음부터 고음 순서대로 넣어주세요.")]
         [SerializeField] private Transform[] _trackCubes = new Transform[8];
@@ -14,6 +16,8 @@ namespace Core
         [SerializeField] private float _baseHeight = 1f;       // 큐브의 기본 높이
         
         [SerializeField] private AudioAnalyzer _audioAnalyzer;
+        
+        [SerializeField] private Material _cubeMaterial;
 
         private void Update()
         {
@@ -40,6 +44,11 @@ namespace Core
                     _trackCubes[i].localScale = newScale;
                 }
             }
+        }
+        
+        public void UpdateThemeColor(TrackData track)
+        {
+            _cubeMaterial.SetColor(EmissionColor, track.themeColor);
         }
     }
 }

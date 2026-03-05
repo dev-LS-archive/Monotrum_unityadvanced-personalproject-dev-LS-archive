@@ -80,9 +80,13 @@ namespace Player
             float currentMotionSpeed = _currentSpeed / _maxRunSpeed;
             _animator.SetFloat(Define.Anim.MotionSpeed, currentMotionSpeed);
             
+            // PlayerController.cs의 HandleRunAndTapeStop() 내부
             // 3. 오디오 피치 동기화 (테이프 스톱)
-            if (AudioManager.Instance != null)
+            // 재생 중일 때만 상호작용
+            if (AudioManager.Instance != null && AudioManager.Instance.IsPlaying)
+            {
                 AudioManager.Instance.SetPitch(SpeedRatio);
+            }
         }
 
         private void TriggerJump()
