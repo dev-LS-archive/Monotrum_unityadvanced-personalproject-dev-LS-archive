@@ -4,19 +4,28 @@ namespace Core
 {
     public class GameManager : Singleton<GameManager>
     {
-        [Header("Cursor Settings")]
-        [SerializeField] private bool _lockCursorOnStart = true;
+        //[Header("Cursor Settings")]
+        //[SerializeField] private bool _lockCursorOnStart = true;
         
         protected override void Awake()
         {
             base.Awake();
+            
+            // 중복 인스턴스면 초기화 건너뛰기
+            if (Instance != this) return;
+            
+            QualitySettings.vSyncCount = 0; // VSync 강제 해제 (인풋렉 방지)
+            Application.targetFrameRate = 144; // 144 프레임 고정 (GPU 보호 및 환경 통일)
+            
             InitializeManagers();
             
-            if (_lockCursorOnStart)
-                SetCursorLocked(true);
+            //if (_lockCursorOnStart)
+            //    SetCursorLocked(true);
         }
         
-        void Start()
+        // 토글 관련 컨트롤은 전부 게임씬 안에서만 조정
+        
+        /*void Start()
         {
             Logger.Instance.LogInfo("Starting Game Manager");
             InputManager.Instance.OnCancelAction += ToggleCursorState;
@@ -28,7 +37,7 @@ namespace Core
             
             if (InputManager.Instance != null)
                 InputManager.Instance.OnCancelAction -= ToggleCursorState;
-        }
+        }*/
         
         // [학습 기록] 폴링 방식 -> 옵저버 패턴으로 전환하기 전 코드
         /*
@@ -89,13 +98,5 @@ namespace Core
             Logger.Instance.LogInfo($"Cursor Locked: {isLocked}");
         }
         #endregion
-        
-        public void QuitGame()
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
-            Application.Quit();
-        }
     }
 }

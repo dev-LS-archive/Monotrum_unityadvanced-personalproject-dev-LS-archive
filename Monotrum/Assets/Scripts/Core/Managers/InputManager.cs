@@ -29,7 +29,7 @@ namespace Core
             _input.Player.Move.performed += OnMove;
             _input.Player.Move.canceled += OnMove;
             _input.Player.Jump.performed += OnJump;
-            _input.Player.Interact.performed += OnInteract;
+            // _input.Player.Interact.performed += OnInteract;
             _input.Player.Cancel.performed += OnCancel;
         }
         
@@ -51,7 +51,7 @@ namespace Core
                 _input.Player.Move.performed -= OnMove;
                 _input.Player.Move.canceled -= OnMove;
                 _input.Player.Jump.performed -= OnJump;
-                _input.Player.Interact.performed -= OnInteract;
+                // _input.Player.Interact.performed -= OnInteract;
                 _input.Player.Cancel.performed -= OnCancel;
             }
         }
@@ -69,11 +69,11 @@ namespace Core
             OnJumpAction?.Invoke();
         }
 
-        private void OnInteract(InputAction.CallbackContext ctx)
+        /*private void OnInteract(InputAction.CallbackContext ctx)
         {
             if (_isInputBlocked) return;
             Logger.Instance.LogInfo("OnInteract");
-        }
+        }*/
 
         private void OnCancel(InputAction.CallbackContext ctx)
         {

@@ -77,6 +77,8 @@ namespace Tunnel
                 _audioAnalyzer = FindFirstObjectByType<AudioAnalyzer>();
             
             _playerController = _player.GetComponent<PlayerController>();
+
+            _currentTrack = AudioManager.Instance.SelectedTrack;
         }
 
         private void OnDestroy()

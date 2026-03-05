@@ -1,0 +1,26 @@
+Monotrum (모노트럼 / モノトラム) 
+--------------------
+Made with UnityEngine
+--------------------
+Character Asset
+Unity-Chan (ユニティちゃん Sunny Side Up)
+© Unity Technologies Japan/UCL
+--------------------
+Audio 
+- Neon nights - Patrick Patrikios
+- Make You Move - Ofshane
+- Glaze My Ego - The Soundlings
+- Exploring The Crystal Caves - Asher Fulero
+- Anywhen You Say - Cheel
+from YouTube Studio Audio Library
+--------------------
+Used Font - SIL Open Font License
+Google Noto Sans, OpenSans, Audiowide
+--------------------
+UnityAssets
+- Modern UI Pack
+- Beautify 3 - Advanced Post Processing
+- Starter Assets - ThirdPerson
+- MagicaCloth2
+- Grid Master (Texture Use)
+--------------------
