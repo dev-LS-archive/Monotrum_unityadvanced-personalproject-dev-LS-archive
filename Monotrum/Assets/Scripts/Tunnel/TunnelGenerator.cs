@@ -165,7 +165,6 @@ namespace Tunnel
             // 링들이 다가온 만큼 다음 스폰 좌표도 함께 당겨온다
             _nextSpawnZ -= moveStep;
             
-            // 수정 제안 코드
             while (_activeRings.Count > 0 && _activeRings.Peek().transform.position.z < _player.position.z - _despawnDistance)
             {
                 TunnelRing oldestRing = _activeRings.Dequeue();

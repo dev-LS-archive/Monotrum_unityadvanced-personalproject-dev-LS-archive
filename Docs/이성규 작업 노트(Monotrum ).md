@@ -937,9 +937,79 @@ public void LoadGameScene() => LoadScene(SceneType.Game);
 
 타이틀씬에서 오디오매니저나 가지고 온 데이터를 가지고 오프닝 캔버스의 애니메이션이 끝나는대로 선택된 트랙을 재생하며 큐브 재질의 색상을 트랙 데이터의 테마 컬러로 설정해주었다.
 
+#### 인게임 UI 연동 및 최적화 (InGameManager)
 
-### 최종 빌드
-Day 7 일과 마무리 후 최종 빌드
+- Esc 메뉴(일시정지), 게임 클리어 판정, 프로그레스 바(재생 시간) 연동을 `InGameManager`에서 통합 관리하도록 구현했다.
+
+- **UI 갱신 최적화:** 매 프레임 `string.Format`을 호출하여 텍스트를 갱신하면 가비지(GC)가 누적되어 미세한 프레임 드랍(스파이크)이 발생할 수 있다. 이를 방지하기 위해 텍스트 갱신은 0.5초마다 실행(`_uiUpdateTimer`)되도록 주기에 제한을 걸었다.
+
+- **시각적 부드러움 확보:** 텍스트 갱신은 제한하되, 시각적으로 부드럽게 차올라야 하는 프로그레스 바의 `fillAmount` 갱신 로직은 매 프레임 실행되도록 분리하여 UI가 뚝뚝 끊기는 현상을 방지했다.
+
+---
+
+## 오디오 믹서(AudioMixer) 스냅샷 복구 버그 (SetFloat)
+
+- **현상:** 일시정지(Tape Stop 연출)나 클리어 후 타이틀 씬으로 돌아가면, 다음 곡을 재생할 때 음악이나 효과음이 물속에 있는 것처럼 '먹먹하게' 들리는 현상 발생.
+
+- **원인:** 유니티 `AudioMixer`의 특성상 `SetFloat`으로 특정 파라미터(Pitch, Lowpass 등)를 조작하면, 이후 `Snapshot.TransitionTo()`를 호출해 노멀 상태로 돌리려 해도 해당 파라미터가 스냅샷의 통제를 벗어나 이전 값을 유지하기 때문.
+
+- **수정:** 믹서를 초기화하는 `CompleteMixerReset` 함수를 작성하고, 코루틴을 통해 믹서의 `ClearFloat()`을 명시적으로 호출하여 파라미터 오버라이드 족쇄를 완전히 풀어주었다.
+
+---
+
+## 씬 전환 시 코루틴 멈춤 및 중첩 버그
+
+- **현상:** 게임 클리어 직후 `Time.timeScale = 0`이 되면 믹서 초기화 코루틴(`ClearMixerRoutine`) 내의 `WaitForSeconds`가 영원히 대기 상태에 빠져 `ClearFloat`이 실행되지 않음. 또한 빠르게 씬 전환을 반복하면 이전 씬의 코루틴이 겹치는 문제 발생.
+
+- **수정:**
+  - 대기 함수를 타임 스케일의 영향을 받지 않는 `WaitForSecondsRealtime`으로 교체.
+  - 새 초기화 코루틴을 실행하기 전, 기존에 돌고 있던 코루틴을 `StopCoroutine`으로 강제 종료하여 꼬임을 방지했다.
+
+---
+
+## PlayerController의 믹서 '막타' 버그 (Race Condition)
+
+- **현상:** 씬 초기화(Scene Reset)가 진행되는 찰나의 프레임에, 아직 파괴되지 않은 `PlayerController`의 `Update`가 뒤늦게 실행됨. 이때 입력이 0이므로 캐릭터 속도가 0으로 계산되고, 연동된 `AudioManager.Instance.SetPitch(0f)`를 호출해버림. 결과적으로 기껏 초기화한 믹서가 다시 테이프 스톱 상태로 덮어씌워짐.
+
+- **수정:** `AudioManager`에 `_isMixerLocked` 플래그를 도입. 씬 전환이나 클리어 등 초기화가 시작되는 순간 믹서를 잠가버려, 외부 스크립트(`PlayerController`)가 오디오 상태를 건드리지 못하게 원천 차단하는 완벽한 아키텍처를 구축했다.
+
+---
+
+## 씬 전환 중 입력(Input) 통제
+
+- **이슈:** 씬 전환을 위해 화면이 페이드 아웃되는 동안, 유저가 조작 키(Esc, Space 등)를 연타하면 상태 로직이 꼬이거나 Null 참조 에러가 발생할 위험이 있음.
+
+- **해결:** `TrackController` 등에 래퍼 함수를 만들고, 씬 전환이 시작되는 즉시 `InputManager.Instance.SetInputActive(false)`를 호출해 모든 입력을 물리적으로 차단했다. 게임 씬 로드 후 오프닝이 끝나면 다시 `true`로 전환해 안전성을 극대화했다.
+
+---
+
+## 최종 빌드
+
+- Day 8 밤샘 디버깅 및 일과 마무리 후 최종 PC 스탠드얼론 빌드 성공.
+- 모든 엣지 케이스 및 치명적 버그 수정 완료.
 
 ### Day 9 - 2026-03-06 (최종 제출 및 문서 마무리)
 오후 1시까지 프로젝트 최종 제출 및 오전 중 문서작업 마무리
+
+사소한 UI 수정 및 해상도 설정 수정
+
+Resizable Window' 옵션이나 'Allow Fullscreen Switch 설정
+
+- **AudioManager**: `event Action<bool> OnPlayStateChanged` 이벤트를 추가하여 재생/정지 상태를 방송한다. AudioAnalyzer가 이를 구독하여 자체 `_isAnalyzing` 플래그로 분석 상태를 제어한다.
+
+해당 설정을 안해준걸 확인하고 오디오 매니저에서 방송 신호를 추가했다.
+
+```cs
+// 재생 상태시 true, 멈춘 상태시 false
+OnPlayStateChanged?.Invoke(bool);
+```
+
+일시정지(Pause)나 게임 클리어 시 Time.timeScale = 0f가 적용되어 시각적으로는 화면과 비주얼라이저가 완벽하게 멈춘 것처럼 보인다. 하지만 실제로는 AudioManager에서 재생 상태 변경을 알리는 이벤트(OnPlayStateChanged)를 쏘지 않고 있어, AudioAnalyzer는 여전히 자신이 분석을 해야 하는 상태(_isAnalyzing = true)로 착각하고 있었다.
+
+이로 인해 시간은 멈춰있고 음악도 정지된 상태임에도 불구하고, 백그라운드에서는 Update() 문이 매 프레임 허공에 대고 GetSpectrumData를 호출하며 쓸데없는 배열 할당과 수학 연산을 헛돌리고 있는 '연산 누수'가 발생 중이었다.
+
+AudioManager의 트랙 재생 및 정지 로직에 OnPlayStateChanged?.Invoke(bool) 코드를 명시적으로 추가하여 방송 신호를 보내도록 수정했다. 이를 통해 오디오가 멈추면 분석기의 상태도 즉시 false로 전환되어 불필요한 백그라운드 연산이 차단되도록 최적화했다.
+
+**최종 빌드 및 정상 동작 확인**
+
+버전 1.0.0 세팅 및 빌드 후 정상 동작을 확인했다.

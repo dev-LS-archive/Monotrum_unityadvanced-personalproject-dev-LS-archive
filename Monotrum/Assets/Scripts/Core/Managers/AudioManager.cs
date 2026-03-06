@@ -104,12 +104,12 @@ namespace Core
             }
         }
 
-        public void StopTrack()
+        /*public void StopTrack()
         {
             _audioSource.Stop();
             
             OnPlayStateChanged?.Invoke(false);
-        }
+        }*/
         
         public void SelectTrack(TrackData track)
         {
@@ -123,19 +123,28 @@ namespace Core
         public void PauseMusic()
         {
             if (_audioSource.isPlaying)
+            {
                 _audioSource.Pause();
+                OnPlayStateChanged?.Invoke(false);
+            }
         }
 
         public void ResumeMusic()
         {
             if (!_audioSource.isPlaying)
-                _audioSource.Play();
+            {
+                _audioSource.UnPause();
+                OnPlayStateChanged?.Invoke(true);
+            }
         }
 
         public void StopMusic()
         {
             if (_audioSource.isPlaying)
+            {
                 _audioSource.Stop();
+                OnPlayStateChanged?.Invoke(false);
+            }
         }
         #endregion
         
