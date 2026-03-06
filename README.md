@@ -5,7 +5,7 @@
 
 ---
 ## 문서 바로가기
-[![작업노트-이성규](https://img.shields.io/badge/작업_노트-Click_Here-blue?style=for-the-badge&logo=readme)](./Docs/이성규%20작업%20노트(Monotrum%20).md)
+[![작업노트-이성규](https://img.shields.io/badge/작업_노트-Click_Here-blue?style=for-the-badge&logo=readme)](./Docs/이성규_작업노트(Monotrum).md)
 
 ---
 
