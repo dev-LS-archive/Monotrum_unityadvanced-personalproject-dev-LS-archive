@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099a96843fedb8147aef3f7500807196, type: 3}
+  m_Name: TrackData_Neon nights
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.TrackData
+  trackName: Neon nights
+  trackArtist: Patrick Patrikios
+  clip: {fileID: 8300000, guid: 75b47c51d37d6404a8f3b160c3507f46, type: 3}
+  bpm: 146
+  themeColor: {r: 0, g: 5.9921575, b: 5.9921575, a: 1}
+  trackScrollSpeed: 30
