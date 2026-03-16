@@ -1,7 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22871659&assignment_repo_type=AssignmentRepo)
 ---
 
-<img src="https://img.shields.io/badge/Unity-2022.3.62f2-black?style=for-the-badge&logo=unity" alt="Unity"> <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"> <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows" alt="Platform">
+<img src="https://img.shields.io/badge/Unity-6000.3.9f1-black?style=for-the-badge&logo=unity" alt="Unity"> <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"> <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows" alt="Platform">
 
 ---
 ## 문서 바로가기
