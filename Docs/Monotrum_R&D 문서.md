@@ -246,7 +246,7 @@ private float[] _samples = new float[512];
 
 **왜 512인가?** `GetSpectrumData`는 2의 거듭제곱(64, 128, 256, 512, 1024...)만 허용한다. 512는 주파수 해상도와 성능의 균형점으로, 1024 이상은 정밀하지만 연산이 무겁고 256 이하는 저음부 해상도가 부족하다.
 
-**주파수 해상도 계산:** 샘플레이트가 44100Hz일 때 각 bin의 주파수 폭은 `44100 / 2 / 512 ≈ 43Hz`이다. 즉 `_samples[0]`은 0~43Hz, `_samples[1]`은 43~86Hz 구간의 에너지를 담고 있다.
+**주파수 해상도 계산:** 샘플레이트가 44100Hz일 때 각 bin의 주파수 폭은 `44100 / 2 / 512 ≈ 43Hz`이다. 즉 `_samples[0]`은 0 ~ 43Hz, `_samples[1]`은 43 ~ 86Hz 구간의 에너지를 담고 있다.
 
 ```csharp
 AudioManager.Instance.GetSpectrumData(_samples);
